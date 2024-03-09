@@ -1,0 +1,6 @@
+name: Deploy
+description: 🏗️ GitHub Action for deploying to Portainer.
+
+runs:
+  using: node20
+  main: dist/index.js
