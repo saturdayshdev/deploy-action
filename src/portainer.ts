@@ -81,7 +81,7 @@ export class Portainer {
         Authorization: `Bearer ${this.token}`,
       },
       params: {
-        endpointId,
+        filters: endpointId ? JSON.stringify({ endpointId }) : undefined,
       },
     })
 
