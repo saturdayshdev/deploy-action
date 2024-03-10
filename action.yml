@@ -1,6 +1,45 @@
 name: Deploy
 description: 🏗️ GitHub Action for deploying to Portainer.
 
+inputs:
+  portainer-url:
+    description: 'Portainer URL.'
+    required: true
+
+  portainer-username:
+    description: 'Portainer Username.'
+    required: true
+
+  portainer-password:
+    description: 'Portainer Password.'
+    required: true
+
+  portainer-endpoint-id:
+    description: 'Portainer Endpoint ID.'
+    required: true
+
+  env-file:
+    description: 'Env file.'
+    required: true
+
+  stack-name:
+    description: 'Stack name.'
+    required: true
+
+  stack-compose-path:
+    description: 'Path of docker-compose file.'
+    required: true
+
+  stack-pull-image:
+    required: false
+    description: 'Pull image before creating the stack.'
+    default: true
+
+  stack-prune:
+    required: false
+    description: 'Prune services that are no longer referenced.'
+    default: true
+
 runs:
   using: node20
   main: dist/index.js
