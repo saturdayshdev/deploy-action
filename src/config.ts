@@ -32,8 +32,10 @@ const getStackConfig = () => {
   }
 }
 
-export const Config = {
-  portainer: getPortainerConfig(),
+const config = {
   env: getEnv(),
+  portainer: getPortainerConfig(),
   stack: getStackConfig(),
 }
+
+export default config
