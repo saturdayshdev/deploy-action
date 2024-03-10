@@ -1,16 +1,18 @@
 interface ICreateStackConfig {
-    env?: {
-        [key: string]: string;
-    };
+    env: {
+        name: string;
+        value: string;
+    }[];
     fromAppTemplate?: boolean;
     name: string;
     stackFileContent: string;
     webhook?: string;
 }
 interface IUpdateStackConfig {
-    env?: {
-        [key: string]: string;
-    };
+    env: {
+        name: string;
+        value: string;
+    }[];
     prune: boolean;
     pullImage: boolean;
     stackFileContent: string;

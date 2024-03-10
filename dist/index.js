@@ -27049,12 +27049,11 @@ const getPortainerConfig = () => {
 };
 const getEnv = () => {
     const raw = input('env-file', true);
-    const env = {};
-    raw.split('\n').forEach((line) => {
-        const [key, value] = line.split('=');
-        env[key] = value;
+    const envs = raw.split('\n');
+    return envs.map((env) => {
+        const [name, value] = env.split('=');
+        return { name, value };
     });
-    return env;
 };
 const getStackConfig = () => {
     const path = input('stack-compose-path', true);
