@@ -1,5 +1,5 @@
 declare const config: {
-    env: any;
+    env: {};
     portainer: {
         baseUrl: string;
         username: string;
