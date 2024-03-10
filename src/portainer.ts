@@ -17,7 +17,6 @@ interface IUpdateStackConfig {
   }
   prune: boolean
   pullImage: boolean
-  rollbackTo: number
   stackFileContent: string
   webhook?: string
 }
