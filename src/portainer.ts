@@ -29,11 +29,11 @@ export class Portainer {
   private token: string
 
   constructor(baseUrl: string, username: string, password: string) {
-    this.baseUrl = baseUrl
+    this.baseUrl = `${baseUrl}/api`
     this.username = username
     this.password = password
     this.axios = axios.create({
-      baseURL: baseUrl,
+      baseURL: this.baseUrl,
       headers: {
         'Content-Type': 'application/json',
       },
