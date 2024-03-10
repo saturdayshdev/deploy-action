@@ -1,6 +1,6 @@
 import * as core from '@actions/core'
 import * as fs from 'fs'
-import { parseEnvString as parseEnv } from 'parse-env-string'
+import parseEnv from 'parse-env-string'
 
 const input = (input: string, required: boolean = false) => {
   return core.getInput(input, { required })
