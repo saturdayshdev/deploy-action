@@ -1,6 +1,5 @@
 import * as core from '@actions/core'
 import * as fs from 'fs'
-import * as parseEnv from 'parse-env-string'
 
 const input = (input: string, required: boolean = false) => {
   return core.getInput(input, { required })
@@ -17,7 +16,12 @@ const getPortainerConfig = () => {
 
 const getEnv = () => {
   const raw = input('env-file', true)
-  return parseEnv(raw)
+  const env = {}
+  raw.split('\n').forEach((line) => {
+    const [key, value] = line.split('=')
+    env[key] = value
+  })
+  return env
 }
 
 const getStackConfig = () => {
