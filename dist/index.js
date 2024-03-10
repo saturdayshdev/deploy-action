@@ -27196,24 +27196,24 @@ const input = (input, required = false) => {
 };
 const getPortainerConfig = () => {
     return {
-        baseUrl: input('url', true),
-        username: input('username', true),
-        password: input('password', true),
-        endpointId: input('endpointId', true),
+        baseUrl: input('portainer-url', true),
+        username: input('portainer-username', true),
+        password: input('portainer-password', true),
+        endpointId: input('portainer-endpoint-id', true),
     };
 };
 const getEnv = () => {
-    const raw = input('env', true);
+    const raw = input('env-file', true);
     return (0, parse_env_string_1.parseEnvString)(raw);
 };
 const getStackConfig = () => {
-    const path = input('path', true);
+    const path = input('stack-compose-path', true);
     const file = fs.readFileSync(path, 'utf8');
     return {
-        name: input('name', true),
+        name: input('stack-name', true),
         composeFile: file,
-        pullImage: input('pull') === 'true',
-        prune: input('prune') === 'true',
+        pullImage: input('stack-pull-image') === 'true',
+        prune: input('stack-prune') === 'true',
     };
 };
 const config = {
