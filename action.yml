@@ -41,5 +41,8 @@ inputs:
     default: true
 
 runs:
-  using: node20
-  main: dist/index.js
+  using: composite
+  steps:
+    - uses: actions/checkout@v4
+    - uses: node20
+      main: dist/index.js
