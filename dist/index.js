@@ -27190,7 +27190,7 @@ exports["default"] = _default;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const core = __nccwpck_require__(2186);
 const fs = __nccwpck_require__(7147);
-const parse_env_string_1 = __nccwpck_require__(8476);
+const parseEnv = __nccwpck_require__(8476);
 const input = (input, required = false) => {
     return core.getInput(input, { required });
 };
@@ -27204,7 +27204,7 @@ const getPortainerConfig = () => {
 };
 const getEnv = () => {
     const raw = input('env-file', true);
-    return (0, parse_env_string_1.default)(raw);
+    return parseEnv(raw);
 };
 const getStackConfig = () => {
     const path = input('stack-compose-path', true);
@@ -27213,7 +27213,7 @@ const getStackConfig = () => {
         name: input('stack-name', true),
         composeFile: file,
         pullImage: input('stack-pull-image') === 'true',
-        prune: input('stack-prune') === 'true',
+        prune: input('prune') === 'true',
     };
 };
 const config = {
