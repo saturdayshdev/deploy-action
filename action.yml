@@ -1,5 +1,5 @@
 name: Deploy
-description: 🏗️ GitHub Action for deploying to Portainer.
+description: 🏗️ GitHub Action for deploying stacks to Portainer.
 
 inputs:
   portainer-url:

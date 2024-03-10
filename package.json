@@ -1,7 +1,7 @@
 {
   "name": "@saturdayshdev/deploy-action",
   "version": "1.0.0",
-  "description": "🏗️  GitHub Action for deploying to Portainer.",
+  "description": "🏗️  GitHub Action for deploying stacks to Portainer.",
   "main": "dist/index.js",
   "scripts": {
     "build": "ncc build src/action.ts --source-map --out dist"
