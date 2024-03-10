@@ -27086,11 +27086,11 @@ exports.Portainer = void 0;
 const axios_1 = __nccwpck_require__(8757);
 class Portainer {
     constructor(baseUrl, username, password) {
-        this.baseUrl = baseUrl;
+        this.baseUrl = `${baseUrl}/api`;
         this.username = username;
         this.password = password;
         this.axios = axios_1.default.create({
-            baseURL: baseUrl,
+            baseURL: this.baseUrl,
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -27127,7 +27127,7 @@ class Portainer {
                 Authorization: `Bearer ${this.token}`,
             },
             params: {
-                endpointId,
+                filters: endpointId ? JSON.stringify({ endpointId }) : undefined,
             },
         });
         return data;
