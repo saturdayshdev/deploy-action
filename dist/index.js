@@ -27204,7 +27204,7 @@ const getPortainerConfig = () => {
 };
 const getEnv = () => {
     const raw = input('env-file', true);
-    return (0, parse_env_string_1.parseEnvString)(raw);
+    return (0, parse_env_string_1.default)(raw);
 };
 const getStackConfig = () => {
     const path = input('stack-compose-path', true);
